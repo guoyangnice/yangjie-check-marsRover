@@ -15,10 +15,16 @@ public class NewMarsRover {
         if(command.length() < 1){
             return newMarsRoverPosition;
         }
-        if(command.equals("L")){
-            return turnLeft(newMarsRoverPosition);
-        }else if(command.equals("R")){
-            return turnRight(newMarsRoverPosition);
+        switch (command){
+            case "L":
+                newMarsRoverPosition =  turnLeft(newMarsRoverPosition);
+                break;
+            case "R":
+                newMarsRoverPosition =  turnLeft(newMarsRoverPosition);
+                break;
+            case "M":
+                newMarsRoverPosition =  move(newMarsRoverPosition);
+                break;
         }
         return newMarsRoverPosition;
     }
@@ -50,6 +56,24 @@ public class NewMarsRover {
                 break;
             case 3:
                 position.setDirection(String.valueOf(directions.indexOf(0)));
+                break;
+        }
+        return position;
+    }
+
+    private NewMarsRoverPosition move(NewMarsRoverPosition position) {
+        switch (position.getDirection()){
+            case ("N"):
+                position.setY(position.getY()+1);
+                break;
+            case ("S"):
+                position.setY(position.getY()-1);
+                break;
+            case ("W"):
+                position.setX(position.getX()-1);
+                break;
+            case ("E"):
+                position.setX(position.getX()+1);
                 break;
         }
         return position;
