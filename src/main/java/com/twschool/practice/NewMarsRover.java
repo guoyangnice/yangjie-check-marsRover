@@ -17,8 +17,26 @@ public class NewMarsRover {
         }
         if(command.equals("L")){
             return turnLeft(newMarsRoverPosition);
+        }else if(command.equals("R")){
+            return turnRight(newMarsRoverPosition);
         }
         return newMarsRoverPosition;
+    }
+
+    private NewMarsRoverPosition turnRight(NewMarsRoverPosition position) {
+        String dir = position.getDirection();
+        int index = directions.indexOf(dir);
+        switch(index){
+            case 0:
+                position.setDirection(String.valueOf(directions.charAt(3)));
+                break;
+            case 1:
+            case 2:
+            case 3:
+                position.setDirection(String.valueOf(directions.charAt(index-1)));
+                break;
+        }
+        return position;
     }
 
     private NewMarsRoverPosition turnLeft(NewMarsRoverPosition position) {
