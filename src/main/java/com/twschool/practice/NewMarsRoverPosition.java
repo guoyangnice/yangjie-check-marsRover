@@ -4,6 +4,11 @@ public class NewMarsRoverPosition {
     private int x;
     private int y;
     private String direction;
+
+    public NewMarsRoverPosition() {
+
+    }
+
     public int getX() {
         return x;
     }
