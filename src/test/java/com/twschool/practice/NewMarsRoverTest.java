@@ -170,6 +170,7 @@ public class NewMarsRoverTest {
         NewMarsRover newMarsRover = new NewMarsRover(newMarsRoverPosition);
         //when
         NewMarsRoverPosition position = newMarsRover.exeute("L");
+        newMarsRover.setNewMarsRoverPosition(position);
         //then
         Assert.assertEquals(0,newMarsRover.getNewMarsRoverPosition().getX());
         Assert.assertEquals(0,newMarsRover.getNewMarsRoverPosition().getY());
