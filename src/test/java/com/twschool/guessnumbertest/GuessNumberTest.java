@@ -54,4 +54,14 @@ public class GuessNumberTest {
         //Then
         Assert.assertEquals("1A1B",result);
     }
+
+    @Test
+    public void should_return_0_A_0_B_when_enter_1234_given_1435(){
+        //Given
+        Answer answer = new Answer("1 2 3 4");
+        //When
+        String result = answer.check("1 3 4 5");
+        //Then
+        Assert.assertEquals("1A3B",result);
+    }
 }
