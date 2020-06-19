@@ -152,7 +152,8 @@ public class NewMarsRoverTest {
     @Test
     public void should_return_x_0_y_1_direction_N_when_given_x_0_y_0_direction_N(){
         //given
-        NewMarsRover newMarsRover = new NewMarsRover(0,0,"N");
+        NewMarsRoverPosition newMarsRoverPosition = new NewMarsRoverPosition(0,0,"N");
+        NewMarsRover newMarsRover = new NewMarsRover(newMarsRoverPosition);
         //when
         NewMarsRoverPosition position = newMarsRover.exeute("M");
         //then
@@ -160,4 +161,19 @@ public class NewMarsRoverTest {
         Assert.assertEquals(1,position.getY());
         Assert.assertEquals("N",position.getDirection());
     }
+
+    //改善
+    @Test
+    public void should_return_x_0_y_0_direction_W_when_given_x_0_y_0_direction_N_2(){
+        //given
+        NewMarsRoverPosition newMarsRoverPosition = new NewMarsRoverPosition(0,0,"N");
+        NewMarsRover newMarsRover = new NewMarsRover(newMarsRoverPosition);
+        //when
+        NewMarsRoverPosition position = newMarsRover.exeute("L");
+        //then
+        Assert.assertEquals(0,newMarsRover.getNewMarsRoverPosition().getX());
+        Assert.assertEquals(0,newMarsRover.getNewMarsRoverPosition().getY());
+        Assert.assertEquals("W",newMarsRover.getNewMarsRoverPosition().getDirection());
+    }
+
 }
