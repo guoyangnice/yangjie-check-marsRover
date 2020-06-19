@@ -18,12 +18,16 @@ public class Answer {
         List<String> randomList = Arrays.asList(randomNumberString.split(" "));
         int valueAndPositionCorrect = 0;
         int valueIncorrectAndPositionCorrect = 0;
-        for(int i = 0; i < 4;i++){
+        for(int i = 0; i < randomList.size();i++){
             if(userInputList.get(i).equals(randomList.get(i))){
                 valueAndPositionCorrect++;
-            }else{
-                valueIncorrectAndPositionCorrect++;
             }
+            for(int j = 0; j < randomList.size(); j++) {
+                if (userInputList.get(i).equals(randomList.get(j))) {
+                    valueIncorrectAndPositionCorrect++;
+                }
+            }
+
         }
         return valueAndPositionCorrect + "A" + valueIncorrectAndPositionCorrect + "B";
     }
