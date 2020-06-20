@@ -21,13 +21,13 @@ public class Answer {
         for(int i = 0; i < randomList.size();i++){
             if(userInputList.get(i).equals(randomList.get(i))){
                 valueAndPositionCorrect++;
-            }
-            for(int j = 0; j < randomList.size(); j++) {
-                if (userInputList.get(i).equals(randomList.get(j))) {
-                    valueIncorrectAndPositionCorrect++;
+            }else{
+                for(int j = 0; j < randomList.size(); j++) {
+                    if (userInputList.get(i).equals(randomList.get(j))) {
+                        valueIncorrectAndPositionCorrect++;
+                    }
                 }
             }
-
         }
         return valueAndPositionCorrect + "A" + valueIncorrectAndPositionCorrect + "B";
     }

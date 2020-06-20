@@ -16,10 +16,5 @@ public class Generator {
                 randomNumber.concat(ranStr);
             }
         }
-        System.out.println(randomNumber);
-    }
-
-    public static void main(String[] args) {
-        new Generator().generaotrRondomNumber();
     }
 }
