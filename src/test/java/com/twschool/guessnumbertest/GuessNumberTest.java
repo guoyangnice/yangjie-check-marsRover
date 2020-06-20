@@ -117,9 +117,10 @@ public class GuessNumberTest {
         boolean b = false;
         //When,注意这里是只有一次校验
         String randomStr = generator.generaotrRondomNumber();
-        for(int i = 0; i < randomStr.length(); i++){
-            for(int j = i+1;j <randomStr.length(); j++){
-                if(!String.valueOf(randomStr.charAt(i)).equals(String.valueOf(randomStr.charAt(j)))){
+        String randomStrSplit = randomStr.replace(" ","");
+        for(int i = 0; i < randomStrSplit.length(); i++){
+            for(int j = i+1;j <randomStrSplit.length(); j++){
+                if(!String.valueOf(randomStrSplit.charAt(i)).equals(String.valueOf(randomStrSplit.charAt(j)))){
                     b = true;
                 }
             }
