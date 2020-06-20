@@ -6,7 +6,7 @@ package com.twschool.guessnumber;
 public class Game {
     private Answer answer;
     private static final int MAX_LIMIT = 6;
-    private int step = MAX_LIMIT;
+    private static int step = MAX_LIMIT;
     public Game(Answer answer) {
         this.answer = answer;
     }
@@ -16,6 +16,8 @@ public class Game {
         odd();
         if(("4A0B").equals(str)){
             return Status.SUCCEED.name();
+        }else if(step == 0){
+            return Status.FAILED.name();
         }
         return null;
     }
