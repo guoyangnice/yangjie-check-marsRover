@@ -1,10 +1,9 @@
 package com.twschool.guessnumbertest;
 
-import com.sun.tools.javac.jvm.Gen;
-import com.twschool.guessnumber.Answer;
-import com.twschool.guessnumber.Game;
-import com.twschool.guessnumber.Generator;
-import com.twschool.guessnumber.Status;
+import cm.twschool.guessnumber.Answer;
+import cm.twschool.guessnumber.Game;
+import cm.twschool.guessnumber.Generator;
+import cm.twschool.guessnumber.Status;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -102,10 +101,10 @@ public class GuessNumberTest {
         Answer answer = new Answer("1 2 3 4");
         Game game = new Game(answer);
         //When
-        String status1 = game.guess("5 6 7 8");
-        String status2 = game.guess("5 6 7 8");
-        String status3 = game.guess("5 6 7 8");
-        String status4 = game.guess("5 6 7 8");
+        game.guess("5 6 7 8");
+        game.guess("5 6 7 8");
+        game.guess("5 6 7 8");
+        game.guess("5 6 7 8");
         String status5 = game.guess("5 6 7 8");
         //Then
         Assert.assertEquals(Status.CONTINUED.name(),status5);
