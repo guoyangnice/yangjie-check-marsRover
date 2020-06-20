@@ -68,7 +68,7 @@ public class GuessNumberTest {
     }
 
     @Test
-    public void should_return_status_when_enter_1234_and_status_and_time_given_1234(){
+    public void should_return_succeed_status_when_enter_1234_and_status_and_time_given_1234(){
         //Given
         Answer answer = new Answer("1 2 3 4");
         Game game = new Game(answer);
@@ -79,7 +79,7 @@ public class GuessNumberTest {
     }
 
     @Test
-    public void should_return_status_when_enter_5678_and_status_and_time_given_1234(){
+    public void should_return_failed_status_when_enter_5678_and_status_and_time_given_1234(){
         //Given
         Answer answer = new Answer("1 2 3 4");
         Game game = new Game(answer);
@@ -92,5 +92,20 @@ public class GuessNumberTest {
         String status6 = game.guess("5 6 7 8");
         //Then
         Assert.assertEquals(Status.FAILED.name(),status6);
+    }
+
+    @Test
+    public void should_return_continued_status_when_enter_5678_and_status_and_time_given_1234(){
+        //Given
+        Answer answer = new Answer("1 2 3 4");
+        Game game = new Game(answer);
+        //When
+        String status1 = game.guess("5 6 7 8");
+        String status2 = game.guess("5 6 7 8");
+        String status3 = game.guess("5 6 7 8");
+        String status4 = game.guess("5 6 7 8");
+        String status5 = game.guess("5 6 7 8");
+        //Then
+        Assert.assertEquals(Status.CONTINUED.name(),status5);
     }
 }

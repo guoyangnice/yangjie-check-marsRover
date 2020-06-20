@@ -16,10 +16,16 @@ public class Game {
         odd();
         if(("4A0B").equals(str)){
             return Status.SUCCEED.name();
-        }else if(step == 0){
+        }
+        if(step > 0){
+            if(("4A0B").equals(str)){
+                return Status.SUCCEED.name();
+            }else{
+                return Status.CONTINUED.name();
+            }
+        }else{
             return Status.FAILED.name();
         }
-        return null;
     }
 
     private void odd(){
