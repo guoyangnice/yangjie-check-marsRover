@@ -1,7 +1,9 @@
 package com.twschool.guessnumbertest;
 
+import com.sun.tools.javac.jvm.Gen;
 import com.twschool.guessnumber.Answer;
 import com.twschool.guessnumber.Game;
+import com.twschool.guessnumber.Generator;
 import com.twschool.guessnumber.Status;
 import org.junit.Assert;
 import org.junit.Test;
@@ -107,5 +109,23 @@ public class GuessNumberTest {
         String status5 = game.guess("5 6 7 8");
         //Then
         Assert.assertEquals(Status.CONTINUED.name(),status5);
+    }
+
+    @Test
+    public void should_return_random_when_enter_random_and_status_and_time_given_random(){
+        //Given
+        Generator generator = new Generator();
+        boolean b = false;
+        //When,注意这里是只有一次校验
+        String randomStr = generator.generaotrRondomNumber();
+        for(int i = 0; i < randomStr.length(); i++){
+            for(int j = i+1;j <randomStr.length(); j++){
+                if(!String.valueOf(randomStr.charAt(i)).equals(String.valueOf(randomStr.charAt(j)))){
+                    b = true;
+                }
+            }
+        }
+        //Then
+        Assert.assertEquals(true,b);
     }
 }
