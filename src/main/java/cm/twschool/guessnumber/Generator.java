@@ -9,7 +9,7 @@ public class Generator {
     static String temp="";
 
     public String generaotrRondomNumber(){
-        Random r = new Random(1);
+        Random r = new Random();
         String randomNumberStr = "";
         while(randomNumberStr.length() < 4){
             int ran = r.nextInt(10);
