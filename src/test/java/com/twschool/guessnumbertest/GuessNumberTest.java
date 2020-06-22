@@ -9,7 +9,7 @@ import org.junit.Test;
 
 public class GuessNumberTest {
     @Test
-    public void should_return_0_A_0_B_when_enter_1234_given_3456(){
+    public void should_return_0_A_0_B_when_enter_1234_given_5678(){
         //Given
         Answer answer = new Answer("1 2 3 4");
         //When
@@ -55,17 +55,17 @@ public class GuessNumberTest {
         //When
         String result = answer.check("1 5 6 7");
         //Then
-        Assert.assertEquals("1A1B",result);
+        Assert.assertEquals("1A0B",result);
     }
 
     @Test
-    public void should_return_1A3B_when_enter_1234_given_1435(){
+    public void should_return_1A2B_when_enter_1234_given_1435(){
         //Given
         Answer answer = new Answer("1 2 3 4");
         //When
         String result = answer.check("1 3 4 5");
         //Then
-        Assert.assertEquals("1A3B",result);
+        Assert.assertEquals("1A2B",result);
     }
 
     @Test
